@@ -1,0 +1,100 @@
+.wrapper {
+    padding: 0 30px 30px 30px;
+}
+
+.page-title {
+    font-weight: normal;
+    margin: 20px 0 0;
+    text-align: center;
+}
+
+p {
+    margin: 0 0 20px 0;
+    text-align: center;  
+}
+
+button {
+    display: block;
+    text-transform: capitalize;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+}
+
+.game-board {
+    position: relative;
+    width: 506px;
+    margin-right: 50px;
+}
+
+.board {
+    border: 1px solid #818181;
+    border-bottom: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.board-tile {
+    background-color: #CCC;
+    border-right: 1px solid #818181;
+    border-bottom: 1px solid #818181;
+    cursor: pointer;
+    display: block;
+    height: 100px;
+    width: 100px;
+}
+
+.board-tile:nth-of-type(5n) {
+    border-right: none;
+}
+
+.robot {
+    position: absolute;
+    width: 50px;
+}
+
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.moving-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moving-controls button {
+    background: url("./assets/arrows.jpg") no-repeat;
+    border: none;
+    cursor: pointer;
+    height: 78px;
+    padding: 0;
+    width: 78px;
+}
+
+.moving-controls button.top {
+    background-position: -65px 4px;
+}
+
+.moving-controls button.bottom {
+    background-position: -66px -143px;
+}
+
+.moving-controls button.left {
+    background-position: 8px -68px;
+}
+
+.moving-controls button.right {
+    background-position: -139px -72px;
+}
+
+.horizontal-controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 300px;
+}
