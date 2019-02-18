@@ -41,7 +41,7 @@ class Board extends Component {
 
   teleportRobot = (x, y) => {
     const { xPos, yPos } = this.state;
-    let delay, timeOut;
+    let delay;
     if (Math.abs(x - xPos) > Math.abs(y - yPos))
       delay = (Math.abs(x - xPos) - 1) * 1000;
     else delay = (Math.abs(y - yPos) - 1) * 1000;
