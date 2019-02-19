@@ -43,8 +43,8 @@ class Board extends Component {
     const { xPos, yPos } = this.state;
     let delay;
     if (Math.abs(x - xPos) > Math.abs(y - yPos))
-      delay = (Math.abs(x - xPos) - 1) * 1000;
-    else delay = (Math.abs(y - yPos) - 1) * 1000;
+      delay = Math.abs(x - xPos) * 1000;
+    else delay = Math.abs(y - yPos) * 1000;
 
     setTimeout(() => {
       this.setState({
@@ -54,12 +54,13 @@ class Board extends Component {
     }, delay);
   };
 
-  createBoard() {
+  renderBoard() {
+    let key;
     let board = [];
 
     for (let i = GRID_SIZE; i >= 1; --i) {
       for (let j = 1; j <= GRID_SIZE; ++j) {
-        let key = Number(i.toString() + j.toString());
+        key = Number(i.toString() + j.toString());
         board.push(
           <Square
             key={key}
@@ -82,7 +83,7 @@ class Board extends Component {
 
     return (
       <div className="game-board">
-        <div className="board">{this.createBoard()}</div>
+        <div className="board">{this.renderBoard()}</div>
         <Robot xAxis={xPos} yAxis={yPos} />
       </div>
     );
