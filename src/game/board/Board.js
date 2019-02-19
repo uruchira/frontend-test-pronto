@@ -2,7 +2,14 @@ import React, { Component } from "react";
 import Square from "./Square";
 import Robot from "./Robot";
 
-import { GRID_SIZE, LEFT, RIGHT, TOP, BOTTOM } from "../../constants";
+import {
+  GRID_SIZE,
+  LEFT,
+  RIGHT,
+  TOP,
+  BOTTOM,
+  ONE_MINUTE_DELAY
+} from "../../constants";
 
 class Board extends Component {
   state = {
@@ -43,8 +50,8 @@ class Board extends Component {
     const { xPos, yPos } = this.state;
     let delay;
     if (Math.abs(x - xPos) > Math.abs(y - yPos))
-      delay = Math.abs(x - xPos) * 1000;
-    else delay = Math.abs(y - yPos) * 1000;
+      delay = Math.abs(x - xPos) * ONE_MINUTE_DELAY;
+    else delay = Math.abs(y - yPos) * ONE_MINUTE_DELAY;
 
     setTimeout(() => {
       this.setState({
